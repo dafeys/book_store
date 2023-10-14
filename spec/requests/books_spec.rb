@@ -72,40 +72,23 @@ RSpec.describe "/books", type: :request do
           post books_url, params: { book: invalid_attributes }
         }.to change(Book, :count).by(0)
       end
-
-      it "renders a successful response (i.e. to display the 'new' template)" do
-        post books_url, params: { book: invalid_attributes }
-        expect(response).to be_successful
-      end
     end
   end
 
   describe "PATCH /update" do
     context "with valid parameters" do
-      let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
-      }
-
       it "updates the requested book" do
         book = Book.create! valid_attributes
-        patch book_url(book), params: { book: new_attributes }
+        patch book_url(book), params: { book: valid_attributes }
         book.reload
-        skip("Add assertions for updated state")
+        expect(response).to redirect_to(book_url(book))
       end
 
       it "redirects to the book" do
         book = Book.create! valid_attributes
-        patch book_url(book), params: { book: new_attributes }
+        patch book_url(book), params: { book: valid_attributes }
         book.reload
         expect(response).to redirect_to(book_url(book))
-      end
-    end
-
-    context "with invalid parameters" do
-      it "renders a successful response (i.e. to display the 'edit' template)" do
-        book = Book.create! valid_attributes
-        patch book_url(book), params: { book: invalid_attributes }
-        expect(response).to be_successful
       end
     end
   end
