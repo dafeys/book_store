@@ -152,7 +152,7 @@ SimpleForm.setup do |config|
   config.label_text = ->(label, required, _explicit_label) { "#{label} #{required}" }
 
   # CSS class for buttons
-  config.button_class = 'rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer mb-1'
+  config.button_class = 'rounded-lg mb-8 py-3 px-5 bg-orange-600 text-white inline-block font-medium cursor-pointer mb-1'
 
   # Set this to div to make the checkbox and radio properly work
   # otherwise simple_form adds a label tag instead of a div around

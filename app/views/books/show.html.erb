@@ -1,12 +1,14 @@
-<div class="mx-auto md:w-2/3 w-full flex">
+<div class="flex w-full mx-auto md:w-2/3">
   <div class="mx-auto">
+    <p class="card-title"><%= @book.title %></p>
+    <p class="card-author"><%= @book.author %></p>
+    <p class="card-isbn">
+      ISBN:<%= @book.isbn %>
+    </p>
+    <p class="card-text"><%= @book.description %></p>
 
-    <%= render partial: "books/book", locals: { book: @book, route: book_path } %>
-
-    <%= link_to "Edit this book", edit_book_path(@book), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <div class="inline-block ml-2">
-      <%= button_to "Destroy this book", book_path(@book), method: :delete, class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium" %>
-    </div>
-    <%= link_to "Back to books", books_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <div class="flex m-4 space-x-4">
+      <%= link_to "Back to books", books_path, class: "btn" %>
+      <%= link_to "Edit", edit_book_path(@book), class: "btn" %>
   </div>
 </div>
