@@ -3,5 +3,5 @@ class Book < ApplicationRecord
   validates :isbn, presence: true, length: { is: 13 }
   validates :description, length: { maximum: 1000 }
 
-  scope :ordered, -> { order(title: :asc) }
+  scope :ordered, -> { order(:title) }
 end

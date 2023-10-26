@@ -57,9 +57,9 @@ RSpec.describe BooksController, type: :request do
 
     context "with invalid parameters" do
       it "is not successful" do
-        expect {
+        expect do
           post books_path, params: { book: invalid_attributes }
-        }.to change(Book, :count).by(0)
+        end.to change(Book, :count).by(0)
 
         expect(response).to be_unprocessable
       end
@@ -69,11 +69,10 @@ RSpec.describe BooksController, type: :request do
   describe "PATCH #update" do
 
     context "with valid parameters" do
-
       it "is successful" do
         patch book_path(book), params: { book: new_attributes }
         book.reload
-        
+
         expect(response).to redirect_to(book_url(book))
         expect(flash[:notice]).to eq("Book was successfully updated.")
       end
