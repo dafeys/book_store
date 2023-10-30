@@ -1,8 +1,7 @@
-<%= simple_form_for @book do |form| %>
-  <%= form.input :title %>
-  <%= form.input :author %>
-  <%= form.input :isbn %>
-  <%= form.input :description %>
-  <%= form.button :submit %>
+<%= simple_form_for(book, url: books_path, method: :post) do |f| %>
+  <%= f.input :title %>
+  <%= f.input :author %>
+  <%= f.input :isbn, hint: "13 digits ISBN format" %>
+  <%= f.input :description %>
+  <%= f.button :submit %>
 <% end %>
-
