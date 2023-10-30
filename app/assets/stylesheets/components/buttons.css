@@ -1,0 +1,5 @@
+@layer components {
+  .btn {
+    @apply mt-2 rounded-lg py-3 px-5 bg-slate-300 font-medium text-sm
+  }
+}

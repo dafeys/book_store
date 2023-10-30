@@ -1,37 +1,6 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-  @layer base {
-    .book-card {
-      @apply my-7 text-center mx-5 bg-cyan-200 py-3.5 inline-flex flex-col rounded-lg shadow flex-wrap w-52 h-60;
-    }
-
-    .card-title {
-      @apply py-2 text-xl font-bold mx-auto
-    }
-
-    .card-author {
-      @apply py-2 text-base font-semibold mx-auto
-    }
-
-    .card-isbn {
-      @apply py-2 text-xs mx-auto
-    }
-
-    .card-text {
-      @apply py-2 text-base mx-auto
-    }
-
-    .btn {
-      @apply mt-2 rounded-lg py-3 px-5 bg-slate-200 font-medium text-sm
-    }
-  }
-
-.flash-notice {
-  @apply inline-block px-3 py-2 mb-5 font-medium text-green-700 rounded-lg bg-green-50;
-}
-
-.flash-alert  {
-  @apply inline-block px-3 py-2 mb-5 font-medium text-red-700 rounded-lg bg-red-50;
-}
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+@import "./components/card.css";
+@import "./components/buttons.css";
+@import "./components/flash.css";
