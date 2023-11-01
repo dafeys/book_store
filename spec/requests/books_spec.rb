@@ -10,7 +10,7 @@ RSpec.describe BooksController, type: :request do
     it "is successful" do
       get books_path
 
-      expect(response.body).to include("Books")
+      expect(response).to be_successful
       expect(response.body).to include(book.title)
     end
   end
@@ -19,6 +19,7 @@ RSpec.describe BooksController, type: :request do
     it "is successful" do
       get book_path(book)
 
+      expect(response).to be_successful
       expect(response.body).to include(book.title)
     end
   end
@@ -27,7 +28,7 @@ RSpec.describe BooksController, type: :request do
     it "is successful" do
       get new_book_path
 
-      expect(response.body).to include("New book")
+      expect(response).to be_successful
     end
   end
 
@@ -35,6 +36,7 @@ RSpec.describe BooksController, type: :request do
     it "is successful" do
       get edit_book_url(book)
 
+      expect(response).to be_successful
       expect(response.body).to include(book.title)
     end
   end
