@@ -1,6 +1,6 @@
 @layer base {
   .navbar {
-    @apply flex flex-wrap items-center justify-between p-4;
+    @apply flex flex-wrap items-center justify-between p-4 shadow-xl;
   }
 
   .nav-title {
