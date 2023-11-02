@@ -1,0 +1,22 @@
+<div class="bg-gray-700">
+  <nav class="navbar">
+    <div class="nav-title-container">
+      <span class="nav-title">Book Haven</span>
+    </div>
+    <div class="nav-items">
+      <div class="text-sm lg:flex-grow">
+        <%= link_to "All Books", root_path, class: "nav-link" %>
+        <%= link_to "New Book", new_book_path, class: "nav-link" %>
+      </div>
+      <div class="flex items-center text-white">
+        <% if user_signed_in? %>
+          <span class="mr-2">Hello, <%= current_user.email %></span>
+          <%= button_to "Sign Out", destroy_user_session_path, method: :delete, class: "sign-button" %>
+
+        <% else %>
+          <%= link_to "Sign In", new_user_session_path, class: "sign-button" %>
+        <% end %>
+    </div>
+    </div>
+  </nav>
+</div>
