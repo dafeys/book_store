@@ -1,0 +1,12 @@
+<div id="<%= dom_id book %>">
+  <p class="card-title"><%= book.title %></p>
+  <p class="card-author"><%= book.author %></p>
+  <p class="card-isbn">
+    ISBN:<%= book.isbn %>
+  </p>
+  <p class="mb-4 card-text"><%= book.description %></p>
+  
+  <%= link_to "Show", book, class: "btn m-4" %>
+  
+  <hr class="mt-6">
+</div>

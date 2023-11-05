@@ -1,0 +1,7 @@
+<%= simple_form_for(book, url: polymorphic_path(book)) do |f| %>
+  <%= f.input :title %>
+  <%= f.input :author %>
+  <%= f.input :isbn, hint: "13 digits ISBN format" %>
+  <%= f.input :description %>
+  <%= f.button :submit %>
+<% end %>
