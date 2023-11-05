@@ -1,11 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe "User Registrations", type: :request do
-  let!(:user) { FactoryBot.create :user }
-  let(:valid_attributes) { FactoryBot.attributes_for(:user) }
-  let(:without_username) { FactoryBot.attributes_for(:user, :without_username) }
-  let(:wrong_email) { FactoryBot.attributes_for(:user, :without_username) }
-  let(:short_password) { FactoryBot.attributes_for(:user, :without_username) }
+  let!(:user) { create :user }
+  let(:valid_attributes) { attributes_for(:user) }
+  let(:without_username) { attributes_for(:user, :without_username) }
+  let(:wrong_email) { attributes_for(:user, :without_username) }
+  let(:short_password) { attributes_for(:user, :without_username) }
 
   describe "GET /users/sign_up" do
     it "is successful" do
