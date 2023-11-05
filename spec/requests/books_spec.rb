@@ -1,9 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe BooksController, type: :request do
-  let!(:book) { FactoryBot.create :book }
-  let(:valid_attributes) { FactoryBot.attributes_for(:book) }
-  let(:invalid_attributes) { FactoryBot.attributes_for(:book, :without_title) }
+  let!(:book) { create :book }
+  let(:valid_attributes) { attributes_for(:book) }
+  let(:invalid_attributes) { attributes_for(:book, :without_title) }
   let(:new_attributes) { { book: { title: "Updated title" }} }
 
   describe "GET #index" do
