@@ -1,0 +1,42 @@
+@layer components {
+  .show-container {
+    @apply flex flex-wrap;
+  }
+
+  .show-card {
+    @apply relative flex flex-row w-full text-gray-700 bg-zinc-50 shadow-md rounded-xl bg-clip-border
+  }
+
+  .show-cover
+  {
+    @apply relative m-0 overflow-hidden text-gray-700 bg-white rounded-r-none w-80 shrink-0 rounded-xl bg-clip-border
+  }
+
+  .show-title {
+    @apply text-4xl font-bold mx-auto text-pink-700 uppercase
+  }
+
+  .show-author {
+    @apply py-2 text-2xl font-bold mx-auto text-black
+  }
+
+  .show-isbn {
+    @apply text-sm  mx-auto text-gray-500
+  }
+
+  .show-text {
+    @apply block my-8 font-sans text-base antialiased font-normal leading-relaxed text-gray-700
+  }
+
+  .show-btn {
+    @apply flex items-center gap-2 px-6 py-3 font-sans text-xs font-bold text-center text-emerald-500 uppercase align-middle transition-all rounded-lg select-none hover:bg-emerald-500/10 active:bg-emerald-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none
+  }
+
+  .edit-button {
+    @apply  items-center gap-2 px-6 py-3 font-sans text-xs font-bold text-center text-emerald-500 uppercase align-middle transition-all rounded-lg select-none hover:bg-emerald-500/10 active:bg-emerald-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none
+  }
+
+  .download-link {
+    @apply  mt-4 text-center;
+  }
+}
