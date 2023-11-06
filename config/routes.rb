@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root "books#index"
   resources :books
-  devise_for :users, skip: [:password, :registrations, :confirmations, :unlocks, :omniauth_callbacks]
+  devise_for :users, skip: [:password, :registrations ]
 
   as :user do
     get "users/sign_up", to: "devise/registrations#new", as: :new_user_registration
