@@ -1,0 +1,17 @@
+@layer components {
+  .form-title {
+    @apply mb-6 text-3xl text-center;
+  }
+
+  .form-body {
+    @apply flex justify-center p-8 mx-auto bg-gray-200;
+  }
+
+  .form-container {
+    @apply px-8 pt-6 pb-2 mb-4 bg-white rounded shadow-xl;
+  }
+
+  .form-link {
+    @apply underline text-emerald-600 hover:text-emerald-700;
+  }
+}

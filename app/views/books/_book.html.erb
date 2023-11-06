@@ -1,12 +1,15 @@
-<div id="<%= dom_id book %>">
-  <p class="card-title"><%= book.title %></p>
-  <p class="card-author"><%= book.author %></p>
-  <p class="card-isbn">
-    ISBN:<%= book.isbn %>
-  </p>
-  <p class="mb-4 card-text"><%= book.description %></p>
-  
-  <%= link_to "Show", book, class: "btn m-4" %>
-  
-  <hr class="mt-6">
+<div id="<%= dom_id book %>" class="book-card">
+  <!-- Placeholder for book cover -->
+  <img class="object-cover h-auto w-42" src="https://via.placeholder.com/250" alt="<%= book.title %>">
+  <div class="flex flex-col justify-between flex-grow p-6">
+    <div>
+      <h2 class="card-title"><%= book.title %></h2>
+      <p class="card-author"><%= book.author %></p>
+      <p class="mb-2 text-sm text-gray-700">ISBN: <%= book.isbn %></p>
+      <p class="card-text"><%= book.description %></p>
+    </div>
+    <div class="mt-auto">
+      <%= link_to "Show", book, class: "card-button" %>
+    </div>
+  </div>
 </div>

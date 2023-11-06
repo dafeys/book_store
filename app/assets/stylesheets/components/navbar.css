@@ -1,0 +1,26 @@
+@layer base {
+  .navbar {
+    @apply flex flex-wrap items-center justify-between p-4 shadow-xl;
+  }
+
+  .nav-title {
+    @apply text-xl font-semibold tracking-tight;
+  }
+
+  .nav-title-container{
+    @apply flex items-center flex-shrink-0 mr-6 text-white;
+  }
+
+  .nav-items {
+    @apply flex-grow block w-full lg:flex lg:items-center lg:w-auto;
+  }
+
+  .nav-link {
+    @apply block mt-4 mr-4 text-teal-200 lg:inline-block lg:mt-0 hover:text-white;
+  }
+
+  .sign-button {
+    @apply inline-block px-4 py-2 mt-4 text-sm font-semibold leading-none text-white border border-white rounded hover:border-transparent hover:text-teal-600 hover:bg-white lg:mt-0;
+  }
+
+}

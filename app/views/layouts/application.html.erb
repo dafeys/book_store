@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>BookStore</title>
+    <title>Book Haven</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,8 +11,9 @@
   </head>
 
   <body>
-    <header class="container flex px-5 mx-auto mt-2">
-      <%= render 'layouts/flashes' %>
+    <header>
+      <%= render partial: "shared/navbar" %>
+      <%= render partial: "shared/flashes" %>
     </header>
     <main class="container flex px-5 mx-auto mt-8">
       <%= yield %>

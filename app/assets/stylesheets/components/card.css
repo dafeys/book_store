@@ -1,10 +1,10 @@
 @layer components {
   .book-card {
-    @apply my-7 text-center mx-5 bg-cyan-200 py-3.5 inline-flex flex-col rounded-lg shadow flex-wrap w-52 h-60;
+    @apply flex m-8 overflow-hidden rounded-lg shadow-lg bg-zinc-50 h-80;
   }
 
   .card-title {
-    @apply py-2 text-xl font-bold mx-auto text-pink-700
+    @apply py-2 text-xl font-bold mx-auto text-emerald-700
   }
 
   .card-author {
@@ -16,6 +16,10 @@
   }
 
   .card-text {
-    @apply py-2 text-base mx-auto
+    @apply  overflow-ellipsis overflow-hidden h-24
+  }
+
+  .card-button {
+    @apply py-2 px-4 bg-orange-700 text-white font-semibold rounded-lg shadow-md hover:bg-orange-500 focus:outline-none focus:ring-2 uppercase  focus:ring-pink-400 focus:ring-opacity-75 hover:shadow-lg
   }
 }
