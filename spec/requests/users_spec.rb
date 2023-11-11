@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "User Registrations", type: :request do
+RSpec.describe Devise::RegistrationsController, type: :request do
   let!(:user) { create :user }
   let(:valid_attributes) { attributes_for(:user) }
   let(:without_username) { attributes_for(:user, :without_username) }
