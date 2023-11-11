@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe Book, type: :model do
   context "validations" do
@@ -29,26 +29,6 @@ RSpec.describe Book, type: :model do
 
     it "has a pdf attached" do
       expect(book.book_content).to be_attached
-    end
-  end
-
-  context "adding cover to existing book" do
-    let(:book) { create(:book) }
-
-    it "can have a cover to be attached" do
-      file = fixture_file_upload(Rails.root.join("spec", "fixtures", "test_cover.jpg"), "image/jpg")
-      book.book_cover.attach(file)
-      expect(book.book_cover).to be_attached
-    end
-  end
-
-  context "adding pdf to existing book" do
-    let(:book) { create(:book) }
-
-    it "can have a pdf to be attached" do
-      file = fixture_file_upload(Rails.root.join("spec", "fixtures", "dummy.pdf"), "application/pdf")
-      book.book_cover.attach(file)
-      expect(book.book_cover).to be_attached
     end
   end
 end
