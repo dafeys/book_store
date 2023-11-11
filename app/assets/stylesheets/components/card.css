@@ -3,6 +3,10 @@
     @apply flex m-8 overflow-hidden rounded-lg shadow-lg bg-zinc-50 h-80;
   }
 
+  .book-cover {
+    @apply relative m-0 overflow-hidden rounded-l-none w-60 shrink-0 rounded-xl bg-clip-border;
+  }
+
   .card-title {
     @apply py-2 text-xl font-bold mx-auto text-pink-700
   }

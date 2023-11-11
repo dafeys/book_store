@@ -9,7 +9,7 @@
 
   .show-cover
   {
-    @apply relative m-0 overflow-hidden text-gray-700 bg-white rounded-r-none w-80 shrink-0 rounded-xl bg-clip-border
+    @apply relative m-0 overflow-hidden rounded-r-none w-80 shrink-0 rounded-xl bg-clip-border
   }
 
   .show-title {
@@ -38,5 +38,9 @@
 
   .download-link {
     @apply mt-4 text-center;
+  }
+
+  .book-img {
+    @apply relative w-auto rounded-xl bg-clip-border;
   }
 }

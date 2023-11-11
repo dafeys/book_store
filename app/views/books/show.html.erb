@@ -1,11 +1,7 @@
 <div class="show-container">
   <div class="show-card">
     <div class="show-cover">
-      <% if @book.book_cover.attached? %>
-        <%= image_tag @book.book_cover, class: "object-cover w-full h-full" %>
-      <% else %>
-        <%= image_tag "http://via.placeholder.com/640x360", class: "object-cover w-full h-full" %>
-      <% end %>
+      <%= display_book_cover(@book) %>
     </div>
 
     <div class="p-6">
