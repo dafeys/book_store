@@ -1,9 +1,6 @@
 module ApplicationHelper
   def display_book_cover(book)
-    if book.book_cover.attached?
-      image_tag book.book_cover, class: "book-img"
-    else
-      image_tag "book_cover.jpg", class: "book-img"
-    end
+    image = book.book_cover.attached? ? book.book_cover : "book_cover.jpg"
+    image_tag image, class: "book-img"
   end
 end
