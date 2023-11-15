@@ -2,6 +2,8 @@
   <%= f.input :title %>
   <%= f.input :author %>
   <%= f.input :isbn, hint: "13 digits ISBN format" %>
+  <%= f.input :book_cover, as: :file %>
+  <%= f.input :book_content, as: :file %>
   <%= f.input :description %>
   <%= f.button :submit %>
 <% end %>

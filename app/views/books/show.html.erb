@@ -1,14 +1,23 @@
-<div class="flex w-full mx-auto md:w-2/3">
-  <div class="mx-auto">
-    <p class="card-title"><%= @book.title %></p>
-    <p class="card-author"><%= @book.author %></p>
-    <p class="card-isbn">
-      ISBN:<%= @book.isbn %>
-    </p>
-    <p class="card-text"><%= @book.description %></p>
+<div class="show-container">
+  <div class="show-card">
+    <div class="show-cover">
+      <%= display_book_cover(@book) %>
+    </div>
 
-    <div class="flex m-4 space-x-4">
-      <%= link_to "Back to books", books_path, class: "btn" %>
-      <%= link_to "Edit", edit_book_path(@book), class: "btn" %>
+    <div class="p-6">
+      <%= link_to @book.title, edit_book_path(@book), class: "show-title" %>
+      <h4 class="show-author"><%= @book.author %></h4>
+      <p class="show-isbn">ISBN: <%= @book.isbn %></p>
+      <p class="show-text"><%= @book.description %></p>
+      <div class="mt-auto ">
+        <%= link_to "Back to books", books_path, class: "card-button" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="download-link">
+    <% if current_user && @book.book_content.attached? %>
+      <%= link_to "Download Book", @book.book_content, download: @book.title, class: "show-btn" %>
+    <% end %>
   </div>
 </div>
