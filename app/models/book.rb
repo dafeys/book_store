@@ -7,4 +7,5 @@ class Book < ApplicationRecord
   validates :description, length: { maximum: 1000 }
 
   scope :ordered, -> { order(:title) }
+  update_index("books") { self }
 end

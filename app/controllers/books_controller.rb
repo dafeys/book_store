@@ -41,6 +41,10 @@ class BooksController < ApplicationController
     redirect_to books_path, notice: "Book was successfully destroyed.", status: :see_other
   end
 
+  def search
+    @books = BooksIndex.query(query_string: { fields: [:title, :author], query: search_params[:query] })
+  end
+
   private
 
   def book_params
