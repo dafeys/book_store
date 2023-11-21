@@ -1,10 +1,28 @@
 @layer base {
   .navbar {
-    @apply flex flex-wrap items-center justify-between p-4 shadow-xl;
+    @apply flex flex-wrap items-center justify-between p-2 shadow-xl;
+    background: linear-gradient(to right, #00417a, #00d9ff);
   }
 
   .nav-title {
-    @apply text-xl font-semibold tracking-tight;
+    @apply text-xl font-bold text-purple-200;
+  }
+
+  .haven {
+    @apply  font-semibold tracking-tight text-white;
+    animation: pulse 7s infinite;
+  }
+
+  @keyframes pulse {
+    0% {
+      text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #ff00de, 0 0 20px #ff00de;
+    }
+    70% {
+      text-shadow: none;
+    }
+    100% {
+      text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #ff00de, 0 0 20px #ff00de;
+    }
   }
 
   .nav-title-container{
@@ -16,11 +34,29 @@
   }
 
   .nav-link {
-    @apply block mt-4 mr-4 text-teal-200 lg:inline-block lg:mt-0 hover:text-white;
+    @apply block mt-4 mr-4 text-teal-200 transition-colors duration-200 transform lg:inline-block lg:mt-0 hover:text-white hover:scale-105;
+    transition: text-shadow 0.4s;
+  }
+
+  .nav-link:hover {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff00de, 0 0 50px #ff00de, 0 0 60px #ff00de, 0 0 70px #ff00de;
+  }
+
+  .form-input {
+    @apply mt-3 transition-all duration-300 ease-in-out border-teal-500;
+  }
+
+  .form-input:focus {
+    outline: none;
+    box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ff00de, 0 0 40px #ff00de;
   }
 
   .sign-button {
     @apply inline-block px-4 py-2 mt-4 text-sm font-semibold leading-none text-white border border-white rounded hover:border-transparent hover:text-teal-600 hover:bg-white lg:mt-0;
+    transition: box-shadow 0.4s;
   }
 
+  .sign-button:hover {
+    box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff00de;
+  }
 }
