@@ -42,7 +42,17 @@ class BooksController < ApplicationController
   end
 
   def search
-    @books = BooksIndex.query(query_string: { fields: [:title, :author], query: search_params[:query] })
+    query = params[:search][:query]
+
+    if query.blank?
+      flash[:alert] = "Search field cannot be empty."
+      redirect_to(request.referer || books_path) and return
+    end
+
+    @books = BookSearch.search(query).presence || collection
+    flash.now[:notice] = "We found #{@books.count} books"
+
+    render :index
   end
 
   private
