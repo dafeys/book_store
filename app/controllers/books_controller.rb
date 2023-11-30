@@ -42,15 +42,20 @@ class BooksController < ApplicationController
   end
 
   def search
-    query = params[:search][:query]
+    query = search_params[:query]
 
     if query.blank?
       flash[:alert] = "Search field cannot be empty."
-      redirect_to(request.referer || books_path) and return
+      redirect_back(fallback_location: root_path) and return
     end
 
-    @books = BookSearch.search(query).presence || collection
-    flash.now[:notice] = "We found #{@books.count} books"
+    @books = BookSearch.search(query)
+
+    if @books.blank?
+      flash.now[:alert] = "No books match your search."
+    else
+      flash.now[:notice] = "We found #{@books.count} books"
+    end
 
     render :index
   end
@@ -59,6 +64,10 @@ class BooksController < ApplicationController
 
   def book_params
     params.require(:book).permit(:title, :author, :isbn, :book_cover, :book_content, :description)
+  end
+
+  def search_params
+    params.require(:search).permit(:query)
   end
 
   def collection
