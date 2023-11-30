@@ -3,6 +3,10 @@ require "rails_helper"
 RSpec.describe BookSearch, type: :request do
   let!(:book) { create :book }
 
+  before(:each) do
+    BooksIndex.reset
+  end
+
   describe "GET #search" do
     context "when query is not blank" do
       before do

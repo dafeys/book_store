@@ -5,8 +5,7 @@ RSpec.describe BookSearch do
   let(:search_result) { BookSearch.search(query) }
 
   before(:each) do
-    BooksIndex.reset!
-    BooksIndex.import!
+    BooksIndex.reset
   end
 
   describe ".search" do
