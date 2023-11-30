@@ -35,7 +35,7 @@ RSpec.configure do |config|
 
   # Update strategy to :bypass for all tests - all the index updates are
   # performed immediately and synchronously
-  config.before(:each) do
+  config.before(:suite) do
     Chewy.strategy(:bypass)
   end
 

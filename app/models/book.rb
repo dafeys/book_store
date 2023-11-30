@@ -1,4 +1,6 @@
 class Book < ApplicationRecord
+  update_index("books") { self }
+
   has_one_attached :book_cover
   has_one_attached :book_content
 
@@ -7,6 +9,4 @@ class Book < ApplicationRecord
   validates :description, length: { maximum: 1000 }
 
   scope :ordered, -> { order(:title) }
-
-  update_index("books") { self }
 end
