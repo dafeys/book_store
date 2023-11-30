@@ -8,5 +8,5 @@ class Book < ApplicationRecord
 
   scope :ordered, -> { order(:title) }
 
-  update_index("books") { self if saved_change_to_title? || saved_change_to_author?}
+  update_index("books") { self }
 end
