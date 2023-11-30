@@ -1,4 +1,6 @@
 class Book < ApplicationRecord
+  update_index("books") { self }
+
   has_one_attached :book_cover
   has_one_attached :book_content
 
