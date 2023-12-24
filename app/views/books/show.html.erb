@@ -15,9 +15,13 @@
     </div>
   </div>
 
-  <div class="download-link">
-    <% if current_user && @book.book_content.attached? %>
-      <%= link_to "Download Book", @book.book_content, download: @book.title, class: "show-btn" %>
-    <% end %>
-  </div>
+  <% if current_user && @book.book_content.attached? %>
+    <script src="https://acrobatservices.adobe.com/view-sdk/viewer.js"></script>
+    <div id="adobe-dc-view" class="mt-8 show-card"></div>
+    <div data-controller="adobe-viewer"
+        data-url="<%= rails_blob_path(@book.book_content, only_path: true) %>"
+        data-filename="<%= @book.book_content.filename %>"
+        data-adobe-viewer-element-id="adobe-dc-view">
+    </div>
+  <% end %>
 </div>
