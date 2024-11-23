@@ -1,10 +1,11 @@
 require "rails_helper"
 
 RSpec.describe BooksController, type: :request do
-  let!(:book) { create :book }
+  let!(:book) { create(:book, :with_pdf) }
   let(:valid_attributes) { attributes_for(:book) }
   let(:invalid_attributes) { attributes_for(:book, :without_title) }
   let(:new_attributes) { { book: { title: "Updated title" }} }
+  let!(:user) { create :user }
 
   describe "GET #index" do
     it "is successful" do
@@ -21,6 +22,24 @@ RSpec.describe BooksController, type: :request do
 
       expect(response).to be_successful
       expect(response.body).to include(CGI.escapeHTML(book.title))
+    end
+
+    it "renders Adobe viewer when book content is attached" do
+      sign_in user
+
+      get book_path(book)
+
+      expect(response).to be_successful
+      expect(response.body).to include("adobe-dc-view")
+      expect(response.body).to include("adobe-viewer")
+    end
+
+    it "does not render Adobe viewer when user is not signed in" do
+      get book_path(book)
+
+      expect(response).to be_successful
+      expect(response.body).not_to include("adobe-dc-view")
+      expect(response.body).not_to include("adobe-viewer")
     end
   end
 
