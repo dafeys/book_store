@@ -1,12 +1,18 @@
-<div class="bg-gray-700">
+<div class="bg-slate-600">
   <nav class="navbar">
     <div class="nav-title-container">
-      <span class="nav-title">Book Haven</span>
+      <span class="nav-title">Book <span class="haven">Haven</span></span>
     </div>
     <div class="nav-items">
       <div class="text-sm lg:flex-grow">
         <%= link_to "All Books", root_path, class: "nav-link" %>
         <%= link_to "New Book", new_book_path, class: "nav-link" %>
+      </div>
+      <div class="mx-10 ">
+        <%= simple_form_for :search, url: search_books_path, method: :get, html: {  class: "flex items-center search-form", role: "search" } do |f| %>
+          <%= f.input :query, as: :search, input_html: { class: "mt-3 border-teal-500", placeholder: "Search book..." }, label: false %>
+          <%= f.submit "Search", class: "sign-button mx-4" %>
+        <% end %>
       </div>
       <div class="flex items-center text-white">
         <% if user_signed_in? %>

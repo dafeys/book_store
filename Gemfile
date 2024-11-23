@@ -13,6 +13,7 @@ gem "tailwindcss-rails"
 gem "bootsnap", require: false
 gem "devise"
 gem "simple_form", git: 'https://github.com/loqimean/simple_form.git'
+gem "chewy"
 
 # gem "image_processing", "~> 1.2"
 

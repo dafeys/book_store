@@ -4,36 +4,36 @@
   }
 
   .show-card {
-    @apply relative flex flex-row w-full text-gray-700 bg-zinc-50 shadow-md rounded-xl bg-clip-border
+    @apply relative flex flex-row w-full text-gray-700 shadow-md bg-zinc-50 rounded-xl bg-clip-border;
   }
 
   .show-cover
   {
-    @apply relative m-0 overflow-hidden rounded-r-none w-80 shrink-0 rounded-xl bg-clip-border
+    @apply relative m-0 overflow-hidden rounded-r-none w-80 shrink-0 rounded-xl bg-clip-border;
   }
 
   .show-title {
-    @apply text-4xl font-bold mx-auto text-pink-700 uppercase
+    @apply mx-auto text-4xl font-bold text-pink-600 uppercase;
   }
 
   .show-author {
-    @apply py-2 text-2xl font-bold mx-auto text-black
+    @apply py-2 mx-auto text-2xl font-bold text-blue-800;
   }
 
   .show-isbn {
-    @apply text-sm  mx-auto text-gray-500
+    @apply mx-auto text-sm text-gray-500;
   }
 
   .show-text {
-    @apply block my-8 font-sans text-base antialiased font-normal leading-relaxed text-gray-700
+    @apply block my-8 font-sans text-base antialiased font-normal leading-relaxed text-gray-700;
   }
 
   .show-btn {
-    @apply flex items-center gap-2 px-6 py-3 font-sans text-xs font-bold text-center text-emerald-500 uppercase align-middle transition-all rounded-lg select-none hover:bg-emerald-500/10 active:bg-emerald-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none
+    @apply flex items-center gap-2 px-6 py-3 font-sans text-xs font-bold text-center uppercase align-middle transition-all rounded-lg select-none text-emerald-500 hover:bg-emerald-500/10 active:bg-emerald-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none;
   }
 
   .edit-button {
-    @apply items-center gap-2 px-6 py-3 font-sans text-xs font-bold text-center text-emerald-500 uppercase align-middle transition-all rounded-lg select-none hover:bg-emerald-500/10 active:bg-emerald-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none
+    @apply items-center gap-2 px-6 py-3 font-sans text-xs font-bold text-center uppercase align-middle transition-all rounded-lg select-none text-emerald-500 hover:bg-emerald-500/10 active:bg-emerald-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none;
   }
 
   .download-link {

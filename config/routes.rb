@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   root "books#index"
-  resources :books
+
+  resources :books do
+    get :search, on: :collection
+  end
+
   devise_for :users, skip: [:password, :registrations ]
 
   as :user do
